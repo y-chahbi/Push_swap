@@ -6,22 +6,22 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 15:04:32 by ychahbi           #+#    #+#             */
-/*   Updated: 2022/12/22 15:06:30 by ychahbi          ###   ########.fr       */
+/*   Updated: 2022/12/29 17:40:15 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t		dex;
 	size_t		dexx;
 	char		*ptr;
-
-	if (!s1 || !s2)
-		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
 	dex = 0;
 	dexx = 0;
+	printf("%s\n", s2);
 	ptr = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!ptr)
 		return (NULL);

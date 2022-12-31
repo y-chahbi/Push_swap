@@ -6,13 +6,13 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 15:06:51 by ychahbi           #+#    #+#             */
-/*   Updated: 2022/12/22 15:07:22 by ychahbi          ###   ########.fr       */
+/*   Updated: 2022/12/29 15:14:47 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	wd_count(char const *s, char c)
+static int	wd_count(char *s, char c)
 {
 	int	dex;
 	int	wd_count;
@@ -30,7 +30,7 @@ static int	wd_count(char const *s, char c)
 	return (wd_count);
 }
 
-static int	wd_lenth(char const *s, char c)
+static int	wd_lenth(char *s, char c)
 {
 	int	wd_lenth;
 
@@ -51,7 +51,7 @@ static int	while_free(char **ptr, int dey)
 	return (0);
 }
 
-static int	while_it(char const *s, char c, char **ptr, int wd_c)
+static int	while_it(char *s, char c, char **ptr, int wd_c)
 {
 	int		dex;
 	int		dey;
@@ -78,7 +78,7 @@ static int	while_it(char const *s, char c, char **ptr, int wd_c)
 	return (1);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**ptr;
 	int		wd_c;

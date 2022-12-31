@@ -6,19 +6,23 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2022/12/22 15:07:53 by ychahbi          ###   ########.fr       */
+/*   Updated: 2022/12/29 17:34:41 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <unistd.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 void	ft_putchar(char c);
-size_t	ft_strlen(const char *s);
-char	**ft_split(char const *s, char c);
-char	*ft_strjoin(char const *s1, char const *s2);
-
+void	ft_putstr(char *s);
+int		check_errors(int ac, char **av);
+size_t	ft_strlen(char *s);
+char	**ft_split(char *s, char c);
+char	*ft_strjoin(char *s1, char *s2);
+int		ft_atoi(char *str);
+int		ft_isdigit(int c);
+char	*ft_strdup(char *s1);
 #endif

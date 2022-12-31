@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 15:03:01 by ychahbi           #+#    #+#             */
-/*   Updated: 2022/12/29 15:14:34 by ychahbi          ###   ########.fr       */
+/*   Created: 2022/12/29 01:06:39 by ychahbi           #+#    #+#             */
+/*   Updated: 2022/12/29 01:10:38 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-size_t	ft_strlen(char *s)
+void	ft_putstr(char *s)
 {
-	size_t	dex;
+	int	dex;
 
+	if (!s)
+		return ;
 	dex = 0;
 	while (s[dex] != '\0')
 	{
+		write(1, &s[dex], 1);
 		dex++;
 	}
-	return (dex);
 }
