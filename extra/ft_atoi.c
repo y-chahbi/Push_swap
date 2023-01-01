@@ -6,11 +6,17 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 02:02:58 by ychahbi           #+#    #+#             */
-/*   Updated: 2022/12/29 03:08:06 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/01 08:44:59 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_puterror(void)
+{
+	write (1, "Error\n", 6);
+	exit(1);
+}
 
 int	ft_atoi(char *str)
 {
@@ -26,18 +32,14 @@ int	ft_atoi(char *str)
 		dex++;
 	if (str[dex] == '-' || str[dex] == '+')
 	{
-		if (str[dex] == '-')
-		{
+		if (str[dex++] == '-')
 			sign = sign * -1;
-		}
-		dex++;
 	}
 	if (ft_isdigit(str[dex]) == 0)
-	{
-		write (1, "Error\n", 6);
-		exit(1);
-	}
-		rslt = (rslt * 10) + (str[dex] - 48);
-		dex++;
+		ft_puterror();
+	while (ft_isdigit(str[dex]) == 1)
+		rslt = (rslt * 10) + (str[dex++] - 48);
+	if (rslt >= 2147483647 || rslt * sign <= -2147483648)
+		ft_puterror();
 	return (rslt * sign);
 }

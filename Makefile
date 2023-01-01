@@ -6,12 +6,12 @@
 #    By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/21 21:05:59 by ychahbi           #+#    #+#              #
-#    Updated: 2022/12/29 17:34:59 by ychahbi          ###   ########.fr        #
+#    Updated: 2022/12/31 23:42:26 by ychahbi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SUBJ = push_swap
-SRC  = push_swap.c extra/ft_putchar.c extra/check_errors.c extra/ft_putstr.c extra/ft_atoi.c extra/ft_isdigit.c extra/ft_strjoin.c extra/ft_strlen.c extra/ft_strdup.c
+SRC  = push_swap.c extra/check_errors.c extra/ft_atoi.c extra/ft_isdigit.c extra/ft_putchar.c extra/ft_putstr.c extra/ft_split.c extra/ft_strdup.c extra/ft_strjoin.c extra/ft_strlen.c extra/ft_substr.c
 CC=cc
 FLAGS=-Wall -Wextra -Werror
 RM=rm -f
@@ -21,6 +21,9 @@ all: $(SUBJ)
 
 $(SUBJ): $(OBJ_ALL)
 	$(CC) $(FLAGS) $^ -o $@
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ_ALL)

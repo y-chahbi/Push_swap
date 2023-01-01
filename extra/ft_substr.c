@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 01:06:39 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/01 08:43:48 by ychahbi          ###   ########.fr       */
+/*   Created: 2022/10/13 10:26:18 by ychahbi           #+#    #+#             */
+/*   Updated: 2022/12/31 21:18:05 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_putstr(char *s)
+char	*ft_substr(char *s, unsigned int start, size_t len)
 {
-	int	dex;
+	size_t	dee;
+	char	*ptr;
 
 	if (!s)
-		return ;
-	dex = 0;
-	while (s[dex] != '\0')
+		return (NULL);
+	if (start >= ft_strlen(s))
+		start = ft_strlen(s);
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	ptr = malloc((len + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	dee = 0;
+	while (dee < len)
 	{
-		write(1, &s[dex], 1);
-		dex++;
+		ptr[dee] = s[start];
+		dee++;
+		start++;
 	}
+	ptr[len] = '\0';
+	return (ptr);
 }
