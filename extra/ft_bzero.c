@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 20:37:07 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/01 09:47:44 by ychahbi          ###   ########.fr       */
+/*   Created: 2023/01/01 11:32:38 by ychahbi           #+#    #+#             */
+/*   Updated: 2023/01/01 11:32:57 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-	t_push_data	*t_data;
-
-	if (argc > 1)
-	{
-		t_data = malloc(sizeof(t_push_data));
-		if (check_errors(argc, argv, t_data) == 6)
-			return (ft_putstr("Error\n"), 0);
-		push_swap_u(t_data);
-	}
-	exit(1);
+	ft_memset(s, 0, n);
 }

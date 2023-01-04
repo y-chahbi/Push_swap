@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 20:37:07 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/01 09:47:44 by ychahbi          ###   ########.fr       */
+/*   Created: 2023/01/01 09:47:56 by ychahbi           #+#    #+#             */
+/*   Updated: 2023/01/04 10:09:39 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	push_swap_u(t_push_data *t_data)
 {
-	t_push_data	*t_data;
-
-	if (argc > 1)
+	if (t_data->size_a == 3)
+		sort_3(t_data);
+	if (t_data->size_a == 5 || t_data->size_a == 4)
+		sort_5(t_data);
+	int i = 0;
+	while (i <= t_data->size_a - 1)
 	{
-		t_data = malloc(sizeof(t_push_data));
-		if (check_errors(argc, argv, t_data) == 6)
-			return (ft_putstr("Error\n"), 0);
-		push_swap_u(t_data);
+		printf("%d\n", t_data->stack_a[i]);
+		i++;
 	}
-	exit(1);
 }

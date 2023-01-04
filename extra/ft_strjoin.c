@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 15:04:32 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/01 08:44:17 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/03 14:09:56 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	if (!s1)
 		return (ft_strdup(s2));
+	if (!s2[0])
+	{
+		write (1, "Error\n", 6);
+		exit(1);
+	}
 	dex = 0;
 	dexx = 0;
 	ptr = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:03:45 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/01 08:47:55 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/03 14:09:00 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	is_sorted(int *tab, int size)
 			k++;
 	}
 	if (k == j - 1)
-		return (6);
+		exit(1);
 	return (0);
 }
 
@@ -65,7 +65,8 @@ void	while_func(char **s, int *j, int *i, char **av)
 
 void	init_func(t_push_data *t_data)
 {
-	t_data->size = 0;
+	t_data->size_a = 0;
+	t_data->size_b = 0;
 	t_data->status = 1;
 }
 
@@ -82,18 +83,16 @@ int	check_errors(int ac, char **av, t_push_data *t_data)
 	while_func (&s, &j, &i, av);
 	p = ft_split(s, ' ');
 	init_func(t_data);
-	while (p[t_data->size] != NULL)
-		t_data->size++;
-	j = 0;
-	t_data->tab = malloc(sizeof(int) * t_data->size);
-	while (p[j] != NULL)
-	{
-		t_data->tab[j] = ft_atoi(p[j]);
-		j++;
-	}
-	if (is_double(t_data->tab, t_data->size) == 6)
+	while (p[t_data->size_a] != NULL)
+		t_data->size_a++;
+	j = -1;
+	t_data->stack_a = malloc(sizeof(int) * t_data->size_a);
+	t_data->stack_b = ft_calloc(sizeof(int), t_data->size_a);
+	while (p[++j] != NULL)
+		t_data->stack_a[j] = ft_atoi(p[j]);
+	if (is_double(t_data->stack_a, t_data->size_a) == 6)
 		return (t_data->status = 0, 6);
-	if (is_sorted(t_data->tab, t_data->size) == 6)
+	if (is_sorted(t_data->stack_a, t_data->size_a) == 6)
 		return (t_data->status = 0);
 	return (0);
 }
