@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:43:47 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/02 20:57:31 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/04 17:10:19 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	push_a(t_push_data *t_data)
 		}
 		t_data->size_a++;
 		t_data->size_b--;
-		write (1, "pb\n", 3);
+		write (1, "pa\n", 3);
 	}
 }
 

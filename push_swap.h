@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/03 14:13:05 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/05 09:11:55 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void	rev_rot_a(t_push_data *t_data);
 void	rev_rot_b(t_push_data *t_data);
 void	sort_3(t_push_data *t_data);
 void	sort_5(t_push_data *t_data);
+void    big_sort(t_push_data *t_data);
 #endif
