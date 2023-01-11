@@ -23,6 +23,7 @@ typedef struct s_data{
 	int		size_a;
 	int		size_b;
 	int		status;
+	int 	ils;
 }	t_push_data;
 
 void	ft_putchar(char c);
