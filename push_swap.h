@@ -52,4 +52,5 @@ void	rev_rot_b(t_push_data *t_data);
 void	sort_3(t_push_data *t_data);
 void	sort_5(t_push_data *t_data);
 void    big_sort(t_push_data *t_data);
+void	find_index_of_longest_sorted(t_push_data *t_data);
 #endif
