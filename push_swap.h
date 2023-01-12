@@ -24,6 +24,8 @@ typedef struct s_data{
 	int		size_b;
 	int		status;
 	int 	ils;
+	int 	s_size;
+	int 	*s_tab;
 }	t_push_data;
 
 void	ft_putchar(char c);
@@ -53,4 +55,7 @@ void	sort_3(t_push_data *t_data);
 void	sort_5(t_push_data *t_data);
 void    big_sort(t_push_data *t_data);
 void	find_index_of_longest_sorted(t_push_data *t_data);
+void	clear_pushed_top(t_push_data *t_data);
+void	clear_pushed_buttom(t_push_data *t_data);
+void	clear_pushed_inside(t_push_data *t_data);
 #endif

@@ -11,6 +11,58 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+void	make_tab_sorted(t_push_data *t_data)
+{
+	int size;
+	int count;
+	int tmp;
+	int dex;
+
+	t_data->s_tab = malloc(sizeof(int)*t_data->s_size);
+	size = t_data->size_a - 1;
+	count = t_data->ils;
+	tmp = -1;
+	dex = 0;
+	while (1)
+	{
+		if (t_data->stack_a[count] > tmp)
+		{
+			tmp = t_data->stack_a[count];
+			t_data->s_tab[dex] = t_data->stack_a[count];
+			dex++;
+		}
+		count++;
+		if (count == t_data->ils)
+			break ;
+		if (count > size)
+			count = 0;
+	}
+}
+
+void	s_size(t_push_data *t_data)
+{
+	int count;
+	int tmp;
+	int size;
+
+	tmp = -1;
+	size = t_data->size_a -1;
+	count = t_data->ils;
+	t_data->s_size = 0;
+	while (1)
+	{
+		if (t_data->stack_a[count] > tmp)
+		{
+			tmp = t_data->stack_a[count];
+			t_data->s_size++;
+		}
+		count++;
+		if (count == t_data->ils)
+			break ;
+		if (count > size)
+			count = 0;
+	}
+}
 
 void	get_biggest_index(t_push_data *t_data, int **tab)
 {
@@ -30,6 +82,8 @@ void	get_biggest_index(t_push_data *t_data, int **tab)
 		}
 		count++;
 	}
+	make_tab_sorted(t_data);
+	s_size(t_data);
 }
 
 void	if_in_mywhile(t_push_data *t_data, int *j, int *i, int **tab)
