@@ -39,7 +39,7 @@ void	while_front(t_push_data *t_data, int i)
 
 void	while_back(t_push_data *t_data, int i)
 {
-	while (i <= t_data->size_a)
+	while (i < t_data->size_a - 1)
 	{
 		rev_rot_a(t_data);
 		i++;
@@ -61,7 +61,10 @@ void	clear_pushed_inside(t_push_data *t_data)
 		if (not_in_tab(t_data, i) == 1)
 		{
 			if (i <= half)
+			{
 				while_front(t_data, i);
+				i = -1;
+			}
 			else
 				while_back(t_data, i);
 		}

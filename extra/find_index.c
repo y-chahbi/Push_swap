@@ -17,7 +17,6 @@ void	make_tab_sorted(t_push_data *t_data)
 	int count;
 	int tmp;
 	int dex;
-
 	t_data->s_tab = malloc(sizeof(int)*t_data->s_size);
 	size = t_data->size_a - 1;
 	count = t_data->ils;
@@ -32,10 +31,10 @@ void	make_tab_sorted(t_push_data *t_data)
 			dex++;
 		}
 		count++;
-		if (count == t_data->ils)
-			break ;
 		if (count > size)
 			count = 0;
+		if (count == t_data->ils)
+			break ;
 	}
 }
 
@@ -57,10 +56,10 @@ void	s_size(t_push_data *t_data)
 			t_data->s_size++;
 		}
 		count++;
-		if (count == t_data->ils)
-			break ;
 		if (count > size)
 			count = 0;
+		if (count == t_data->ils)
+			break ;
 	}
 }
 
@@ -69,7 +68,6 @@ void	get_biggest_index(t_push_data *t_data, int **tab)
 	int size;
 	int count;
 	int tmp;
-
 	size = t_data->size_a - 1;
 	count = 0;
 	tmp = 0;
@@ -82,8 +80,8 @@ void	get_biggest_index(t_push_data *t_data, int **tab)
 		}
 		count++;
 	}
-	make_tab_sorted(t_data);
 	s_size(t_data);
+	make_tab_sorted(t_data);
 }
 
 void	if_in_mywhile(t_push_data *t_data, int *j, int *i, int **tab)
@@ -114,7 +112,6 @@ void	find_index_of_longest_sorted(t_push_data *t_data)
 	int i;
 	int j;
 	int **tab;
-
 	tab = malloc(sizeof(int*) * t_data->size_a - 1);
 	i = 0;
 	t_data->ils = 0;
