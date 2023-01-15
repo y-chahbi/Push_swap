@@ -59,77 +59,64 @@ void	sort_stack_a(t_push_data *t_data)
 	}
 }
 
-void	sort_b_ok(t_push_data *t_data, int j, int i)
-{
-	int ii;
-
-	ii = i;
-	while (j != 0)
-	{
-		if (j == 1 && i == 0)
-			swap_b(t_data);
-		else if (ii >= 0)
-		{
-			rev_rot_b(t_data);
-			ii--;
-		}
-		else
-		{
-			rev_rot_b(t_data);
-			swap_b(t_data);	
-		}
-		j--;
-	}
-}
 void	make_lost_elemment_infirst(t_push_data *t_data)
 {
 	int i;
 	int j;
 	int reuturn_el;
-
+	int half;
 
 	i = 0;
 	j = t_data->stack_b[0];
+	half = (t_data->size_b - 1)/2;
 	reuturn_el = 0;
-	while (i <= t_data->size_b - 1)
+	while (t_data->size_b - 1 >= i)
 	{
 			if (t_data->stack_b[i] < j)
 			{
 				j = t_data->stack_b[i];
 				reuturn_el = i;
 			}
-
 		i++;
 	}
-	while (reuturn_el != 0)
+	if (reuturn_el <= half)
 	{
-		rotate_b(t_data);
-		reuturn_el--;
+		while (reuturn_el > 0)
+		{
+			rotate_b(t_data);
+			reuturn_el--;
+		}
 	}
+	else
+	{
+		reuturn_el = (t_data->size_b - 1) - reuturn_el + 1;
+		while (reuturn_el > 0)
+		{
+			rev_rot_b(t_data);
+			reuturn_el--;
+		}
+	}
+	push_a(t_data);
+}
+
+void	sort_b_ok(t_push_data *t_data, int j)
+{
+	(void)t_data;
+	(void)j;
 }
 
 void	sort_stack_b(t_push_data *t_data)
 {
-	//int i;
-	//int j;
-//
-	//i = 0;
-	//j = 0;
-	make_lost_elemment_infirst(t_data);
-	//while (i <= t_data->size_b - 1)
-	//{
-	//	j = 1;
-	//	while (j <= t_data->size_b - 1)
-	//	{
-	//		if (t_data->stack_b[i] > t_data->stack_b[j])
-	//		{
-	//			sort_b_ok(t_data, j, i);
-	//			break ;
-	//		}
-	//		j++;
-	//	}
-	//	i++;
-	//}
-	//while (is_sorted_b(t_data) == 0)
-	//	rev_rot_b(t_data);
+	int size;
+
+	size = t_data->size_b - 1;
+	while (t_data->size_b - 1)
+	{
+		make_lost_elemment_infirst(t_data);
+	}
+	while (size > 0)
+	{
+		push_b(t_data);
+		size--;
+	}
 }
