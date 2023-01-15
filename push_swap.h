@@ -58,4 +58,7 @@ void	find_index_of_longest_sorted(t_push_data *t_data);
 void	clear_pushed_top(t_push_data *t_data);
 void	clear_pushed_buttom(t_push_data *t_data);
 void	clear_pushed_inside(t_push_data *t_data);
+void	sort_stack_a(t_push_data *t_data);
+void	sort_stack_b(t_push_data *t_data);
+void	tick_tack_push(t_push_data *t_data);
 #endif

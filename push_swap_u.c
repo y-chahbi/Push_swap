@@ -23,9 +23,9 @@ void	push_swap_u(t_push_data *t_data)
 	if (t_data->size_a > 5)
 		big_sort(t_data);
 	i = 0;
-	 while (i <= t_data->size_a - 1)
+	 while (i <= t_data->size_b - 1)
 	 {
-	 	printf("%d\n", t_data->stack_a[i]);
+	 	printf("%d\n", t_data->stack_b[i]);
 	 	i++;
 	 }
 }
