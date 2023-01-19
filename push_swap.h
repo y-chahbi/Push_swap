@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/05 09:11:55 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/18 16:20:43 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,21 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+// typedef struct s_element
+// {
+// 	int value;
+// 	int mark;
+// } t_element;
+
 typedef struct s_data{
 	int		*stack_a;
 	int		*stack_b;
 	int		size_a;
 	int		size_b;
 	int		status;
-	int 	ils;
-	int 	s_size;
-	int 	*s_tab;
+	int		ils;
+	int		s_size;
+	int		*s_tab;
 }	t_push_data;
 
 void	ft_putchar(char c);
@@ -53,7 +59,7 @@ void	rev_rot_a(t_push_data *t_data);
 void	rev_rot_b(t_push_data *t_data);
 void	sort_3(t_push_data *t_data);
 void	sort_5(t_push_data *t_data);
-void    big_sort(t_push_data *t_data);
+void	big_sort(t_push_data *t_data);
 void	find_index_of_longest_sorted(t_push_data *t_data);
 void	clear_pushed_top(t_push_data *t_data);
 void	clear_pushed_buttom(t_push_data *t_data);
@@ -61,4 +67,5 @@ void	clear_pushed_inside(t_push_data *t_data);
 void	sort_stack_a(t_push_data *t_data);
 void	sort_stack_b(t_push_data *t_data);
 void	tick_tack_push(t_push_data *t_data);
+int		is_sorted_a(t_push_data *t_data);
 #endif

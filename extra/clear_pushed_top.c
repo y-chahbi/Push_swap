@@ -14,16 +14,16 @@
 
 int	cheak_if_exist_top(t_push_data *t_data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= t_data->s_size)
 	{
 		if (t_data->stack_a[0] == t_data->s_tab[i])
-			return 1;
+			return (1);
 		i++;
 	}
-	return 0;
+	return (0);
 }
 
 void	clear_pushed_top(t_push_data *t_data)

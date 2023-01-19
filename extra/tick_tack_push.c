@@ -12,35 +12,22 @@
 
 #include "../push_swap.h"
 
-void	do_some_sa(t_push_data *t_data, int i)
-{
-	int temp_i;
-
-	temp_i = i;
-	while (i > 0)
-	{
-		rev_rot_a(t_data);
-		i--;
-	}
-	push_a(t_data);
-	while (temp_i > 0)
-	{
-		rotate_a(t_data);
-		temp_i--;
-	}
-}
-
 void	tick_tack_push(t_push_data *t_data)
 {
-	int i;
+	int	i;
+	int	size;
 
 	i = 0;
-	while (i <= t_data->size_a - 1)
+	size = 0;
+	while (1)
 	{
-		if (t_data->stack_a[i] < t_data->stack_b[0])
-			i++;
-		else
-			do_some_sa(t_data, i);
-
+		if (t_data->stack_a[0] > t_data->stack_b[0])
+			push_a(t_data);
+		if (t_data->stack_a[0] < t_data->stack_b[0])
+			rotate_a(t_data);
+		if (t_data->size_b == 0)
+			break ;
 	}
+	while (is_sorted_a(t_data) == 0)
+		rotate_a(t_data);
 }

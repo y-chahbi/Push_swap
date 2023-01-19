@@ -6,13 +6,13 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:45:23 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/03 13:32:04 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/17 17:23:35 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rev_rot_a(t_push_data *t_data)
+void	rev_rot_aa(t_push_data *t_data)
 {
 	int	i;
 	int	tmp;
@@ -27,11 +27,16 @@ void	rev_rot_a(t_push_data *t_data)
 			i--;
 		}
 		t_data->stack_a[0] = tmp;
-		write (1, "rra\n", 4);
 	}
 }
 
-void	rev_rot_b(t_push_data *t_data)
+void	rev_rot_a(t_push_data *t_data)
+{
+	rev_rot_aa(t_data);
+	write (1, "rra\n", 4);
+}
+
+void	rev_rot_bb(t_push_data *t_data)
 {
 	int	i;
 	int	tmp;
@@ -46,13 +51,18 @@ void	rev_rot_b(t_push_data *t_data)
 			i--;
 		}
 		t_data->stack_b[0] = tmp;
-		write (1, "rrb\n", 4);
 	}
+}
+
+void	rev_rot_b(t_push_data *t_data)
+{
+	rev_rot_bb(t_data);
+	write (1, "rrb\n", 4);
 }
 
 void	rev_rot_a_b(t_push_data *t_data)
 {
-    rev_rot_a (t_data);
-    rev_rot_b (t_data);
+	rev_rot_aa(t_data);
+	rev_rot_bb(t_data);
 	write (1, "rrr\n", 4);
 }

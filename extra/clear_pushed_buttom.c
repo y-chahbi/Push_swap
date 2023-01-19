@@ -14,18 +14,18 @@
 
 int	cheak_if_exist_buttom(t_push_data *t_data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = t_data->size_a - 1;
 	while (i <= t_data->s_size - 1)
 	{
 		if (t_data->stack_a[j] == t_data->s_tab[i])
-			return 1;
+			return (1);
 		i++;
 	}
-	return 0;
+	return (0);
 }
 
 void	clear_pushed_buttom(t_push_data *t_data)

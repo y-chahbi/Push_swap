@@ -6,13 +6,13 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:44:35 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/03 13:12:48 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/17 14:03:35 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rotate_a(t_push_data *t_data)
+void	rotate_aa(t_push_data *t_data)
 {
 	int	i;
 	int	tmp;
@@ -27,11 +27,16 @@ void	rotate_a(t_push_data *t_data)
 			i++;
 		}
 		t_data->stack_a[t_data->size_a - 1] = tmp;
-		write (1, "ra\n", 3);
 	}
 }
 
-void	rotate_b(t_push_data *t_data)
+void	rotate_a(t_push_data *t_data)
+{
+	rotate_aa(t_data);
+	write (1, "ra\n", 3);
+}
+
+void	rotate_bb(t_push_data *t_data)
 {
 	int	i;
 	int	tmp;
@@ -46,13 +51,18 @@ void	rotate_b(t_push_data *t_data)
 			i++;
 		}
 		t_data->stack_b[t_data->size_b - 1] = tmp;
-		write (1, "rb\n", 3);
 	}
+}
+
+void	rotate_b(t_push_data *t_data)
+{
+	rotate_bb(t_data);
+	write (1, "rb\n", 3);
 }
 
 void	rotate_a_b(t_push_data *t_data)
 {
-	rotate_a(t_data);
-	rotate_b(t_data);
+	rotate_aa(t_data);
+	rotate_bb(t_data);
 	write (1, "rr\n", 3);
 }

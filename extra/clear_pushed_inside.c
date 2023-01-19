@@ -14,18 +14,19 @@
 
 int	not_in_tab(t_push_data *t_data, int i)
 {
-	int dex;
+	int	dex;
 
 	dex = 0;
 	while (dex <= t_data->s_size - 1)
 	{
 		if (t_data->stack_a[i] == t_data->s_tab[dex])
-			return 0;
+			return (0);
 		dex++;
 	}
-	return 1;
+	return (1);
 
 }
+
 void	while_front(t_push_data *t_data, int i)
 {
 	while (i > 0)
@@ -49,11 +50,11 @@ void	while_back(t_push_data *t_data, int i)
 
 void	clear_pushed_inside(t_push_data *t_data)
 {
-	int half;
-	int size;
-	int i;
+	int	half;
+	int	size;
+	int	i;
 
-	half = (t_data->size_a - 1)/2;
+	half = (t_data->size_a - 1) / 2;
 	i = 0;
 	size = t_data->size_a - 1;
 	while (i <= size)
