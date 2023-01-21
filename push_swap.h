@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/18 16:20:43 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/20 14:30:07 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-// typedef struct s_element
-// {
-// 	int value;
-// 	int mark;
-// } t_element;
+typedef struct s_element{
+	int	*stack_a;
+	int	*stack_b;
+	int	*current_p;
+}		t_indexing;
 
 typedef struct s_data{
 	int		*stack_a;
@@ -65,7 +65,7 @@ void	clear_pushed_top(t_push_data *t_data);
 void	clear_pushed_buttom(t_push_data *t_data);
 void	clear_pushed_inside(t_push_data *t_data);
 void	sort_stack_a(t_push_data *t_data);
-void	sort_stack_b(t_push_data *t_data);
+void	the_big_player(t_push_data *t_data);
 void	tick_tack_push(t_push_data *t_data);
 int		is_sorted_a(t_push_data *t_data);
 #endif

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:47:56 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/19 13:10:07 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/20 18:21:23 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,17 @@ void	push_swap_u(t_push_data *t_data)
 	if (t_data->size_a > 5)
 		big_sort(t_data);
 	i = 0;
-	printf("stack a : ");
-	while (i <= t_data->size_a - 1)
-	{
-		printf("%d ", t_data->stack_a[i]);
-		i++;
-	}
+	// printf("stack b : ");
+	// while (i <= t_data->size_b - 1)
+	// {
+	// 	printf("%d ", t_data->stack_b[i]);
+	// 	i++;
+	// }
+	// 	i = 0;
+	// printf("\nstack a : ");
+	// while (i <= t_data->size_a - 1)
+	// {
+	// 	printf("%d ", t_data->stack_a[i]);
+	// 	i++;
+	// }
 }
