@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/20 14:30:07 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:57:34 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,7 @@ void	sort_stack_a(t_push_data *t_data);
 void	the_big_player(t_push_data *t_data);
 void	tick_tack_push(t_push_data *t_data);
 int		is_sorted_a(t_push_data *t_data);
+void	find_best_move(t_push_data *t_data);
+void	s_element_dex(t_push_data *t_data, t_indexing *t_dex);
+void	s_el_a_b(t_push_data *t_data, t_indexing *t_dex);
 #endif
