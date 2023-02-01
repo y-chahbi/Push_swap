@@ -19,7 +19,7 @@ void	s_el_b(t_push_data *t_data, t_indexing *t_dex)
 
 	i = 0;
 	half = (t_data->size_b - 1) / 2;
-	t_dex->stack_b = malloc(sizeof(int) * (t_data->size_b - 1));
+	t_dex->stack_b = malloc(sizeof(int) * (t_data->size_b));
 	while (i < t_data->size_b)
 	{
 		if (i > half)
@@ -37,7 +37,7 @@ void	s_el_a(t_push_data *t_data, t_indexing *t_dex)
 
 	i = 0;
 	half = (t_data->size_a - 1) / 2;
-	t_dex->stack_a = malloc(sizeof(int) * (t_data->size_a - 1));
+	t_dex->stack_a = malloc(sizeof(int) * (t_data->size_a));
 	while (i < t_data->size_a)
 	{
 		if (i > half)
@@ -48,7 +48,7 @@ void	s_el_a(t_push_data *t_data, t_indexing *t_dex)
 	}
 }
 
-void	s_el_a_b(t_push_data *t_data, t_indexing *t_dex)
+void	 s_el_a_b(t_push_data *t_data, t_indexing *t_dex)
 {
 	s_el_a(t_data, t_dex);
 	s_el_b(t_data, t_dex);

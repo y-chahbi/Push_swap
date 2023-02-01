@@ -14,11 +14,11 @@
 
 void	tick_tack_push(t_push_data *t_data)
 {
-	int	i;
-	int	size;
+	//int	i;
+	//int	size;
 
-	i = 0;
-	size = 0;
+	//i = 0;
+	//size = 0;
 	while (1)
 	{
 		if (t_data->stack_a[0] > t_data->stack_b[0])

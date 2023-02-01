@@ -21,6 +21,7 @@ typedef struct s_element{
 	int	*stack_a;
 	int	*stack_b;
 	int	*current_p;
+	int	*long_way;
 }		t_indexing;
 
 typedef struct s_data{
