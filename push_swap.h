@@ -56,6 +56,8 @@ void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	rotate_a(t_push_data *t_data);
 void	rotate_b(t_push_data *t_data);
+void	rotate_a_b(t_push_data *t_data);
+void	rev_rot_a_b(t_push_data *t_data);
 void	rev_rot_a(t_push_data *t_data);
 void	rev_rot_b(t_push_data *t_data);
 void	sort_3(t_push_data *t_data);

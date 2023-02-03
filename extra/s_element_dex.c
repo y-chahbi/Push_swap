@@ -54,6 +54,17 @@ int	get_min(t_push_data *t_data)
 	return (index);
 }
 
+int	ccplace(t_push_data *t_data, int i, int j)
+{
+	while (j <= t_data->size_a - 1)
+	{
+		if (t_data->stack_a[j] < t_data->stack_b[i] && t_data->stack_a[j + 1] > t_data->stack_b[i])
+			return j;
+		j++;
+	}
+	return (-1);
+}
+
 void	current_p(t_push_data *t_data, t_indexing *t_dex)
 {
 	int	i;
@@ -80,9 +91,9 @@ void	current_p(t_push_data *t_data, t_indexing *t_dex)
 		{
 			while (j <= t_data->size_a - 1)
 			{
-				if (t_data->stack_b[i] > t_data->stack_a[j] && t_data->stack_b[i] < t_data->stack_a[j + 1])
+				if (ccplace(t_data, i, j) != -1)
 				{
-					t_dex->current_p[i] = t_dex->stack_a[j];
+					t_dex->current_p[i] = t_dex->stack_a[ccplace(t_data, i, j)];
 					break ;
 				}
 				else if (t_data->stack_a[j] > t_data->stack_a[t_data->size_a - 1]
@@ -106,13 +117,31 @@ void	current_p(t_push_data *t_data, t_indexing *t_dex)
 	t_dex->long_way = malloc(sizeof(int) * (t_data->size_b));
 	while (i <= t_data->size_b - 1)
 	{
-		if (t_dex->current_p[i] < 0 && t_dex->stack_b[i] >= 0)
+		if (t_dex->current_p[i] < 0 && t_dex->stack_b[i] > 0){
 			t_dex->long_way[i] = (t_dex->current_p[i] * -1) + t_dex->stack_b[i];
-		else if (t_dex->current_p[i] >= 0 && t_dex->stack_b[i] < 0)
+		}
+		else if (t_dex->current_p[i] > 0 && t_dex->stack_b[i] < 0){
 			t_dex->long_way[i] = t_dex->current_p[i] + (t_dex->stack_b[i] * -1);
-		else if (t_dex->current_p[i] < 0 && t_dex->stack_b[i] < 0)
+		}
+		else if (t_dex->current_p[i] == 0 && t_dex->stack_b[i] == 0){
+			t_dex->long_way[i] = t_dex->current_p[i] + (t_dex->stack_b[i]);
+		}
+		else if (t_dex->current_p[i] == 0 && t_dex->stack_b[i] < 0){
+			t_dex->long_way[i] = t_dex->current_p[i] + (t_dex->stack_b[i] * -1);
+		}
+		else if (t_dex->current_p[i] < 0 && t_dex->stack_b[i] == 0){
+			t_dex->long_way[i] = (t_dex->current_p[i] * -1) + (t_dex->stack_b[i]);
+		}
+		else if (t_dex->current_p[i] == 0 && t_dex->stack_b[i] > 0){
+			t_dex->long_way[i] = t_dex->current_p[i] + (t_dex->stack_b[i]);
+		}
+		else if (t_dex->current_p[i] > 0 && t_dex->stack_b[i] == 0){
+			t_dex->long_way[i] = (t_dex->current_p[i]) + (t_dex->stack_b[i]);
+		}
+		else if (t_dex->current_p[i] < 0 && t_dex->stack_b[i] < 0){
 			t_dex->long_way[i] = (t_dex->current_p[i] * -1) + (t_dex->stack_b[i] * -1);
-		else if (t_dex->current_p[i] >= 0 && t_dex->stack_b[i] >= 0){
+		}
+		else if (t_dex->current_p[i] > 0 && t_dex->stack_b[i] > 0){
 			t_dex->long_way[i] = t_dex->current_p[i] + t_dex->stack_b[i];
 		}
 		i++;
@@ -141,60 +170,79 @@ int get_index(t_indexing *t_dex, t_push_data *t_data)
 	return index;
 }
 
+void	handle_stack_a(int *stka__cur, t_push_data *t_data)
+{
+	while (*stka__cur > 0)
+	{
+		(*stka__cur)--;
+		rotate_a(t_data);
+	}
+	if (t_data->stack_a[0] < t_data->stack_b[0] && *stka__cur >= 0){
+		rotate_a(t_data);
+		puts("j");
+	}
+	while (*stka__cur < -1)
+	{
+		(*stka__cur)++;
+		rev_rot_a(t_data);
+	}
+}
+
+void	handle_stack_b(int stkb__dex, t_push_data *t_data)
+{
+	while (stkb__dex > 0)
+	{
+		stkb__dex--;
+		rotate_b(t_data);
+	}
+	while (stkb__dex < -1)
+	{
+		stkb__dex++;
+		rev_rot_b(t_data);
+	}
+	push_a(t_data);
+}
+
+void	both_rout(int *stkb__dex, int *stka__cur, t_push_data *t_data)
+{
+	while (*stkb__dex >= 0 && *stka__cur >= 0)
+	{
+		rotate_a_b(t_data);
+		(*stkb__dex)--;
+		(*stka__cur)--;
+	}
+	while (*stkb__dex <= -1 && *stka__cur <= -1)
+	{
+		rev_rot_a_b(t_data);
+		(*stkb__dex)++;
+		(*stka__cur)++;
+	}
+	handle_stack_a(stka__cur, t_data);
+	handle_stack_b(*stkb__dex, t_data);
+}
 void	do_some_magic(t_push_data *t_data, t_indexing *t_dex)
 {
-	int current_ppss_a;
-	int posstion_in_b;
+	int stka__cur;
+	int stkb__dex;
 	int index;
 
 	index = get_index(t_dex, t_data);
-	posstion_in_b = t_dex->stack_b[index];
-	current_ppss_a = t_dex->current_p[index];
-	if (current_ppss_a > 0)
-	{
-		while (current_ppss_a > 0)
-		{
-			rotate_a(t_data);
-			current_ppss_a--;
-		}
-		if (t_data->stack_b[0] > t_data->stack_a[0])
-			rotate_a(t_data);
+	stka__cur = t_dex->current_p[index];
+	stkb__dex = t_dex->stack_b[index];
 
-	}
-	else if (current_ppss_a > 0)
+	if (stka__cur == 0 && stkb__dex == 0)
+		push_a(t_data);
+	else if (stka__cur == 1 && stkb__dex == 0 && t_data->stack_a[0] > t_data->stack_b[0])
+		push_a(t_data);
+	else if(stka__cur != 0 && stkb__dex != 0)
+		both_rout(&stkb__dex, &stka__cur, t_data);
+	else if (stkb__dex == 0 && stka__cur == 0 && t_data->stack_a[0] < t_data->stack_b[0])
+		push_a(t_data);
+	else
 	{
-		while (current_ppss_a < 0)
-		{
-			rev_rot_a(t_data);
-			current_ppss_a--;
-		}
+		handle_stack_a(&stka__cur, t_data);
+		handle_stack_b(stkb__dex, t_data);
 	}
-	else if (current_ppss_a < 0)
-	{
-		while (current_ppss_a >= -1)
-		{
-			rev_rot_a(t_data);
-			current_ppss_a++;
-		}
-	}
-	else if (posstion_in_b > 0)
-	{
-		while (posstion_in_b > 0)
-		{
-			rotate_b(t_data);
-			posstion_in_b--;
-		}
-	}
-	else if (posstion_in_b < 0)
-	{
-		while (posstion_in_b >= 0)
-		{
-			rev_rot_b(t_data);
-			posstion_in_b++;
-		}
-	}
-
-	push_a(t_data);
 }
 
 void	help(t_push_data *t_data, t_indexing *t_dex)
@@ -224,6 +272,21 @@ void	s_element_dex(t_push_data *t_data, t_indexing *t_dex)
 {
 	int i;
 
+	i = 0;
+	printf("\nstack a : ");
+	while (i <= t_data->size_a - 1)
+	{
+		printf("%d ", t_data->stack_a[i]);
+		i++;
+	}
+	i = 0;
+	printf("\nstack b : ");
+	while (i <= t_data->size_b - 1)
+	{
+		printf("%d ", t_data->stack_b[i]);
+		i++;
+	}
+	puts("");
 	i = 0;
 	while (t_data->size_b - 1 != -1)
 	{
