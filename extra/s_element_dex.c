@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:49:12 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/21 12:02:44 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/05 19:45:36 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	current_p(t_push_data *t_data, t_indexing *t_dex)
 	t_dex->current_p = malloc(sizeof(int) * (t_data->size_b));
 	while (i <= t_data->size_b - 1)
 	{
-		j = 1;
+		j = 0;
 		if (t_data->stack_b[i] < t_data->stack_a[min])
 		{
 			t_dex->current_p[i] = t_dex->stack_a[min];
@@ -163,7 +163,7 @@ int get_index(t_indexing *t_dex, t_push_data *t_data)
 	index = 0;
 	while (i <= t_data->size_b - 1)
 	{
-		if (t_dex->long_way[i] <= t_dex->long_way[index])
+		if (t_dex->long_way[i] < t_dex->long_way[index])
 			index = i;
 		i++;
 	}
@@ -174,14 +174,12 @@ void	handle_stack_a(int *stka__cur, t_push_data *t_data)
 {
 	while (*stka__cur > 0)
 	{
+		rotate_a(t_data);
 		(*stka__cur)--;
-		rotate_a(t_data);
 	}
-	if (t_data->stack_a[0] < t_data->stack_b[0] && *stka__cur >= 0){
+	if (t_data->stack_a[0] < t_data->stack_b[0] && *stka__cur >= 0)
 		rotate_a(t_data);
-		puts("j");
-	}
-	while (*stka__cur < -1)
+	while (*stka__cur < 0)
 	{
 		(*stka__cur)++;
 		rev_rot_a(t_data);
@@ -195,7 +193,7 @@ void	handle_stack_b(int stkb__dex, t_push_data *t_data)
 		stkb__dex--;
 		rotate_b(t_data);
 	}
-	while (stkb__dex < -1)
+	while (stkb__dex <= -1)
 	{
 		stkb__dex++;
 		rev_rot_b(t_data);
@@ -230,14 +228,16 @@ void	do_some_magic(t_push_data *t_data, t_indexing *t_dex)
 	stka__cur = t_dex->current_p[index];
 	stkb__dex = t_dex->stack_b[index];
 
-	if (stka__cur == 0 && stkb__dex == 0)
+	if (stka__cur == 0 && stkb__dex == 0 && t_data->stack_a[0] > t_data->stack_b[0])/////////momkin 
 		push_a(t_data);
 	else if (stka__cur == 1 && stkb__dex == 0 && t_data->stack_a[0] > t_data->stack_b[0])
 		push_a(t_data);
+	else if (t_data->stack_a[0] > t_data->stack_b[0]
+		&& t_data->stack_a[t_data->size_a - 1] < t_data->stack_b[0] && stka__cur == -1)
+		push_a(t_data);
 	else if(stka__cur != 0 && stkb__dex != 0)
 		both_rout(&stkb__dex, &stka__cur, t_data);
-	else if (stkb__dex == 0 && stka__cur == 0 && t_data->stack_a[0] < t_data->stack_b[0])
-		push_a(t_data);
+
 	else
 	{
 		handle_stack_a(&stka__cur, t_data);
@@ -288,6 +288,7 @@ void	s_element_dex(t_push_data *t_data, t_indexing *t_dex)
 	}
 	puts("");
 	i = 0;
+	(void)t_dex;
 	while (t_data->size_b - 1 != -1)
 	{
 		s_el_a_b(t_data, t_dex);

@@ -34,6 +34,8 @@ void	clear_pushed_buttom(t_push_data *t_data)
 	{
 		if (cheak_if_exist_buttom(t_data) == 1)
 			break ;
+		else if (cheak_if_exist_buttom(t_data) == 0)
+			break ;
 		else
 		{
 			rev_rot_a(t_data);

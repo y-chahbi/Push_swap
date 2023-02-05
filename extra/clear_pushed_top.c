@@ -17,7 +17,7 @@ int	cheak_if_exist_top(t_push_data *t_data)
 	int	i;
 
 	i = 0;
-	while (i <= t_data->s_size)
+	while (i <= t_data->s_size - 1)
 	{
 		if (t_data->stack_a[0] == t_data->s_tab[i])
 			return (1);
