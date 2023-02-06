@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:47:56 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/05 15:38:20 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/06 17:57:00 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	push_swap_u(t_push_data *t_data)
 {
-	int	i;
+	// int	i;
 
 	if (t_data->size_a <= 3)
 		sort_3(t_data);
@@ -22,18 +22,18 @@ void	push_swap_u(t_push_data *t_data)
 		sort_5(t_data);
 	if (t_data->size_a > 5)
 		big_sort(t_data);
-	i = 0;
-	printf("\nstack a : ");
-	while (i <= t_data->size_a - 1)
-	{
-		printf("%d ", t_data->stack_a[i]);
-		i++;
-	}
-	i = 0;
-	printf("\nstack b : ");
-	while (i <= t_data->size_b - 1)
-	{
-		printf("%d ", t_data->stack_b[i]);
-		i++;
-	}
+	// i = 0;
+	// printf("\nstack a : ");
+	// while (i <= t_data->size_a - 1)
+	// {
+	// 	printf("%d ", t_data->stack_a[i]);
+	// 	i++;
+	// }
+	// i = 0;
+	// printf("\nstack b : ");
+	// while (i <= t_data->size_b - 1)
+	// {
+	// 	printf("%d ", t_data->stack_b[i]);
+	// 	i++;
+	// }
 }
