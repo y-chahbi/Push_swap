@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:24:51 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 11:25:01 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 13:00:08 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	check_tops(t_push_data *t_data)
 	while (i <= t_data->s_size - 1)
 	{
 		if (t_data->stack_a[0] == t_data->s_tab[i])
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }
 
 void	push_to_b(t_push_data *t_data)
@@ -41,6 +41,7 @@ void	push_to_b(t_push_data *t_data)
 			rotate_a(t_data);
 	}
 }
+
 void	big_sort(t_push_data *t_data)
 {
 	find_index_of_longest_sorted(t_data);

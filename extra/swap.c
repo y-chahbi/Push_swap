@@ -6,13 +6,13 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:43:03 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/17 14:06:18 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 15:43:44 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap_a(t_push_data *t_data)
+void	swap_aa(t_push_data *t_data)
 {
 	int	tmp;
 
@@ -21,11 +21,16 @@ void	swap_a(t_push_data *t_data)
 		tmp = t_data->stack_a[0];
 		t_data->stack_a[0] = t_data->stack_a[1];
 		t_data->stack_a[1] = tmp;
-		write(1, "sa\n", 3);
 	}
 }
 
-void	swap_b(t_push_data *t_data)
+void	swap_a(t_push_data *t_data)
+{
+	swap_aa(t_data);
+	write(1, "sa\n", 3);
+}
+
+void	swap_bb(t_push_data *t_data)
 {
 	int	tmp;
 
@@ -34,8 +39,13 @@ void	swap_b(t_push_data *t_data)
 		tmp = t_data->stack_b[0];
 		t_data->stack_b[0] = t_data->stack_b[1];
 		t_data->stack_b[1] = tmp;
-		write(1, "sb\n", 3);
 	}
+}
+
+void	swap_b(t_push_data *t_data)
+{
+	swap_bb(t_data);
+	write(1, "sb\n", 3);
 }
 
 void	swap_a_b(t_push_data *t_data)

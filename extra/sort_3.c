@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 09:07:00 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/18 18:38:50 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 12:47:01 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	sort_3(t_push_data *t_data)
 		swap_a(t_data);
 	else
 	{
-		part_1(t_data);	
+		part_1(t_data);
 		part_2(t_data);
 	}	
 }

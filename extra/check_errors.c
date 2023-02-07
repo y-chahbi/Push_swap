@@ -6,12 +6,11 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:03:45 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/03 14:09:00 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 13:00:18 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include<stdio.h>
 
 int	is_double(int *tab, int size)
 {

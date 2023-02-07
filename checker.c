@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/01 11:33:06 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 12:53:10 by ychahbi          ###   ########.fr       */
+/*   Created: 2023/02/07 14:16:57 by ychahbi           #+#    #+#             */
+/*   Updated: 2023/02/07 16:24:24 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int	main(int argc, char **argv)
 {
-	size_t	dex;
+	t_push_data	*t_data;
 
-	dex = 0;
-	while (dex < len)
+	if (argc > 1)
 	{
-		((unsigned char *)b)[dex] = (unsigned char)c;
-		dex++;
+		t_data = malloc(sizeof(t_push_data));
+		if (check_errors(argc, argv, t_data) == 6)
+			return (ft_putstr("Error\n"), 0);
+		checker_u(t_data);
 	}
-	return (b);
+	exit(1);
 }

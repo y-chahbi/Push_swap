@@ -6,16 +6,16 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:32:34 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 11:34:19 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 12:59:51 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int get_index(t_indexing *t_dex, t_push_data *t_data)
+int	get_index(t_indexing *t_dex, t_push_data *t_data)
 {
-	int i;
-	int index;
+	int	i;
+	int	index;
 
 	i = 0;
 	index = 0;
@@ -25,20 +25,19 @@ int get_index(t_indexing *t_dex, t_push_data *t_data)
 			index = i;
 		i++;
 	}
-	return index;
+	return (index);
 }
 
 void	do_some_magic(t_push_data *t_data, t_indexing *t_dex)
 {
-	int stka__cur;
-	int stkb__dex;
-	int index;
+	int	stka__cur;
+	int	stkb__dex;
+	int	index;
 
 	index = get_index(t_dex, t_data);
 	stka__cur = t_dex->current_p[index];
 	stkb__dex = t_dex->stack_b[index];
-		
-	if(stka__cur != 0 && stkb__dex != 0)
+	if (stka__cur != 0 && stkb__dex != 0)
 		both_rout(stkb__dex, stka__cur, t_data);
 	else
 	{
@@ -47,10 +46,10 @@ void	do_some_magic(t_push_data *t_data, t_indexing *t_dex)
 	}
 }
 
-int find_smal_dex(t_push_data *t_data)
+int	find_smal_dex(t_push_data *t_data)
 {
-	int i;
-	int temp;
+	int	i;
+	int	temp;
 	int	index;
 
 	i = 0;
@@ -65,5 +64,5 @@ int find_smal_dex(t_push_data *t_data)
 		}
 		i++;
 	}
-	return index;
+	return (index);
 }

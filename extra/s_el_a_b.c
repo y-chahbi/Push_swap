@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:55:25 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/21 11:57:18 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 12:51:14 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	s_el_a(t_push_data *t_data, t_indexing *t_dex)
 	}
 }
 
-void	 s_el_a_b(t_push_data *t_data, t_indexing *t_dex)
+void	s_el_a_b(t_push_data *t_data, t_indexing *t_dex)
 {
 	s_el_a(t_data, t_dex);
 	s_el_b(t_data, t_dex);

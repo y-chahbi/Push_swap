@@ -6,16 +6,16 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:35:25 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 11:36:32 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 12:52:45 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void    last_sort(t_push_data *t_data)
+void	last_sort(t_push_data *t_data)
 {
-    int half;
-    int smal;
+	int	half;
+	int	smal;
 
 	half = t_data->size_a / 2;
 	smal = find_smal_dex(t_data);

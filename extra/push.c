@@ -6,13 +6,19 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:43:47 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/18 14:23:01 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 15:50:47 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 void	push_a(t_push_data *t_data)
+{
+	push_aa(t_data);
+	write (1, "pa\n", 3);
+}
+
+void	push_aa(t_push_data *t_data)
 {
 	int	i;
 
@@ -33,11 +39,10 @@ void	push_a(t_push_data *t_data)
 		}
 		t_data->size_a++;
 		t_data->size_b--;
-		write (1, "pa\n", 3);
 	}
 }
 
-void	push_b(t_push_data *t_data)
+void	push_bb(t_push_data *t_data)
 {
 	int	i;
 
@@ -58,6 +63,11 @@ void	push_b(t_push_data *t_data)
 		}
 		t_data->size_a--;
 		t_data->size_b++;
-		write (1, "pb\n", 3);
 	}
+}
+
+void	push_b(t_push_data *t_data)
+{
+	push_bb(t_data);
+	write(1, "pb\n", 3);
 }
