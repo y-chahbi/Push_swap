@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/21 11:57:34 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 11:51:50 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,19 @@ void	sort_3(t_push_data *t_data);
 void	sort_5(t_push_data *t_data);
 void	big_sort(t_push_data *t_data);
 void	find_index_of_longest_sorted(t_push_data *t_data);
-void	clear_pushed_top(t_push_data *t_data);
-void	clear_pushed_buttom(t_push_data *t_data);
-void	clear_pushed_inside(t_push_data *t_data);
-void	sort_stack_a(t_push_data *t_data);
 void	the_big_player(t_push_data *t_data);
-void	tick_tack_push(t_push_data *t_data);
 int		is_sorted_a(t_push_data *t_data);
 void	find_best_move(t_push_data *t_data);
 void	s_element_dex(t_push_data *t_data, t_indexing *t_dex);
 void	s_el_a_b(t_push_data *t_data, t_indexing *t_dex);
+int		get_max(t_push_data *t_data);
+int		get_min(t_push_data *t_data);
+void	handle_stack_a(int stka__cur, t_push_data *t_data);
+void	handle_stack_b(int stkb__dex, t_push_data *t_data);
+void	both_rout(int stkb__dex, int stka__cur, t_push_data *t_data);
+int		get_index(t_indexing *t_dex, t_push_data *t_data);
+void	do_some_magic(t_push_data *t_data, t_indexing *t_dex);
+int		find_smal_dex(t_push_data *t_data);
+void    last_sort(t_push_data *t_data);
+void    cur__p(t_push_data *t_data, t_indexing *t_dex);
 #endif

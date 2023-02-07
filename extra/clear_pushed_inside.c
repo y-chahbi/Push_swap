@@ -59,6 +59,8 @@ void	clear_pushed_inside(t_push_data *t_data)
 	size = t_data->size_a - 1;
 	while (i <= size)
 	{
+		// if (t_data->s_size -1 == -1)
+		// 	break ;
 		if (not_in_tab(t_data, i) == 1)
 		{
 			if (i <= half)
@@ -67,7 +69,9 @@ void	clear_pushed_inside(t_push_data *t_data)
 				i = -1;
 			}
 			else
+			{
 				while_back(t_data, i);
+			}
 		}
 		i++;
 	}

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_element_dex.c                                    :+:      :+:    :+:   */
+/*   sort_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 11:49:12 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 11:52:23 by ychahbi          ###   ########.fr       */
+/*   Created: 2023/01/17 17:18:50 by ychahbi           #+#    #+#             */
+/*   Updated: 2023/02/07 11:22:09 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	current_p(t_push_data *t_data, t_indexing *t_dex)
+int	is_sorted_a(t_push_data *t_data)
 {
-	cur__p(t_data, t_dex);
-}
+	int	i;
+	int	tmp;
 
-void	s_element_dex(t_push_data *t_data, t_indexing *t_dex)
-{
-	while (t_data->size_b - 1 != -1)
+	i = 1;
+	tmp = t_data->stack_a[0];
+	while (i <= t_data->size_a - 1)
 	{
-		s_el_a_b(t_data, t_dex);
-		current_p(t_data, t_dex);
-		do_some_magic(t_data, t_dex);
-		s_el_a_b(t_data, t_dex);
-		current_p(t_data, t_dex);
+		if (tmp < t_data->stack_a[i])
+			tmp = t_data->stack_a[i];
+		else
+			return (0);
+		i++;
 	}
-	last_sort(t_data);
+	return (1);
 }

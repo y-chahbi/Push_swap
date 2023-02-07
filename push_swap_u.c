@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:47:56 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/06 17:57:00 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/07 10:12:40 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	push_swap_u(t_push_data *t_data)
 {
-	// int	i;
+	//int	i;
 
 	if (t_data->size_a <= 3)
 		sort_3(t_data);

@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_element_dex.c                                    :+:      :+:    :+:   */
+/*   last_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 11:49:12 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 11:52:23 by ychahbi          ###   ########.fr       */
+/*   Created: 2023/02/07 11:35:25 by ychahbi           #+#    #+#             */
+/*   Updated: 2023/02/07 11:36:32 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	current_p(t_push_data *t_data, t_indexing *t_dex)
+void    last_sort(t_push_data *t_data)
 {
-	cur__p(t_data, t_dex);
-}
+    int half;
+    int smal;
 
-void	s_element_dex(t_push_data *t_data, t_indexing *t_dex)
-{
-	while (t_data->size_b - 1 != -1)
+	half = t_data->size_a / 2;
+	smal = find_smal_dex(t_data);
+	if (smal <= half)
 	{
-		s_el_a_b(t_data, t_dex);
-		current_p(t_data, t_dex);
-		do_some_magic(t_data, t_dex);
-		s_el_a_b(t_data, t_dex);
-		current_p(t_data, t_dex);
+		while (is_sorted_a(t_data) == 0)
+		{
+			rotate_a(t_data);
+		}
 	}
-	last_sort(t_data);
+	else
+	{
+		while (is_sorted_a(t_data) == 0)
+		{
+			rev_rot_a(t_data);
+		}
+	}
 }
