@@ -12,6 +12,8 @@
 
 #include "../push_swap.h"
 
+#include <limits.h>
+
 void	make_tab_sorted(t_push_data *t_data)
 {
 	int	size;
@@ -22,7 +24,7 @@ void	make_tab_sorted(t_push_data *t_data)
 	t_data->s_tab = malloc(sizeof(int) * t_data->s_size);
 	size = t_data->size_a - 1;
 	count = t_data->ils;
-	tmp = -1;
+	tmp = INT_MIN;
 	dex = 0;
 	while (1)
 	{
@@ -46,7 +48,7 @@ void	s_size(t_push_data *t_data)
 	int	tmp;
 	int	size;
 
-	tmp = -1;
+	tmp = INT_MIN;
 	size = t_data->size_a -1;
 	count = t_data->ils;
 	t_data->s_size = 0;
