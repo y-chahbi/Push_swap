@@ -12,8 +12,6 @@
 
 #include "../push_swap.h"
 
-#include <limits.h>
-
 void	make_tab_sorted(t_push_data *t_data)
 {
 	int	size;
@@ -60,7 +58,7 @@ void	s_size(t_push_data *t_data)
 			t_data->s_size++;
 		}
 		count++;
-		if (count > size)
+		if (count >= size) //=====
 			count = 0;
 		if (count == t_data->ils)
 			break ;
@@ -75,7 +73,7 @@ void	get_biggest_index(t_push_data *t_data, int **tab)
 
 	size = t_data->size_a - 1;
 	count = 0;
-	tmp = 0;
+	tmp = INT_MIN;
 	while (count <= size)
 	{
 		if (tab[count][0] > tmp)

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 16:07:48 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/09 10:42:12 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_element{
 	int	*stack_a;

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:49:12 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/08 18:39:08 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/09 13:58:07 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ void	s_element_dex(t_push_data *t_data, t_indexing *t_dex)
 		current_p(t_data, t_dex);
 	}
 	last_sort(t_data);
-	int i = 0;
-	while(i < t_data->s_size)
-	{
-		printf("%d\n", t_data->s_tab[i]);
-		i++;
-	}
+	// int	i;
+
+	// i = 0;
+	// while (i < t_data->s_size)
+	// {
+	// 	printf("%d\n", t_data->s_tab[i]);
+	// 	i++;
+	// }
 }
