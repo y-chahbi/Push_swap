@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/09 10:42:12 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/10 20:50:11 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ typedef struct s_data{
 	int		ils;
 	int		s_size;
 	int		*s_tab;
+	int		*incr;
+	int		*a__stack;
+	int		*save;
+	int		*to_push;
 }	t_push_data;
 
 void	ft_putchar(char c);
@@ -90,4 +94,7 @@ void	last_sort(t_push_data *t_data);
 void	cur__p(t_push_data *t_data, t_indexing *t_dex);
 void	checker_u(t_push_data	*t_data);
 int		ft_strncmp(char *s1, char *s2, size_t n);
+void	incressing(t_push_data *t_data);
+void	ft_setnum(int *b, int c, size_t len);
+void	free_stacks(t_indexing *t_dex, t_push_data *t_data);
 #endif

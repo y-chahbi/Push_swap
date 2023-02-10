@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:03:45 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 13:00:18 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/10 21:06:26 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,5 @@ int	check_errors(int ac, char **av, t_push_data *t_data)
 		return (t_data->status = 0, 6);
 	if (is_sorted(t_data->stack_a, t_data->size_a) == 6)
 		return (t_data->status = 0);
-	return (0);
+	return (free(s), free(p), 0);
 }

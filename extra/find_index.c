@@ -12,60 +12,19 @@
 
 #include "../push_swap.h"
 
-void	make_tab_sorted(t_push_data *t_data)
+void	ft_setnum(int *b, int c, size_t len)
 {
-	int	size;
-	int	count;
-	int	tmp;
-	int	dex;
+	size_t	dex;
 
-	t_data->s_tab = malloc(sizeof(int) * t_data->s_size);
-	size = t_data->size_a - 1;
-	count = t_data->ils;
-	tmp = INT_MIN;
 	dex = 0;
-	while (1)
+	while (dex <= len)
 	{
-		if (t_data->stack_a[count] > tmp)
-		{
-			tmp = t_data->stack_a[count];
-			t_data->s_tab[dex] = t_data->stack_a[count];
-			dex++;
-		}
-		count++;
-		if (count > size)
-			count = 0;
-		if (count == t_data->ils)
-			break ;
+		b[dex] = c;
+		dex++;
 	}
 }
 
-void	s_size(t_push_data *t_data)
-{
-	int	count;
-	int	tmp;
-	int	size;
-
-	tmp = INT_MIN;
-	size = t_data->size_a -1;
-	count = t_data->ils;
-	t_data->s_size = 0;
-	while (1)
-	{
-		if (t_data->stack_a[count] > tmp)
-		{
-			tmp = t_data->stack_a[count];
-			t_data->s_size++;
-		}
-		count++;
-		if (count >= size) //=====
-			count = 0;
-		if (count == t_data->ils)
-			break ;
-	}
-}
-
-void	get_biggest_index(t_push_data *t_data, int **tab)
+void	get_biggest_index(t_push_data *t_data)
 {
 	int	size;
 	int	count;
@@ -73,59 +32,21 @@ void	get_biggest_index(t_push_data *t_data, int **tab)
 
 	size = t_data->size_a - 1;
 	count = 0;
-	tmp = INT_MIN;
+	tmp = t_data->stack_a[0];
 	while (count <= size)
 	{
-		if (tab[count][0] > tmp)
+		if (t_data->stack_a[count] < tmp)
 		{
-			tmp = tab[count][0];
+			tmp = t_data->stack_a[count];
 			t_data->ils = count;
 		}
 		count++;
 	}
-	s_size(t_data);
-	make_tab_sorted(t_data);
-}
-
-void	if_in_mywhile(t_push_data *t_data, int *j, int *i, int **tab)
-{
-	int	tmp;
-	int	max;
-
-	max = 0;
-	tmp = t_data->stack_a[*i];
-	while (*j <= t_data->size_a - 1)
-	{
-		if (t_data->stack_a[*j] > t_data->stack_a[*i]
-			&& t_data->stack_a[*j] >= tmp)
-		{
-			tmp = t_data->stack_a[*j];
-			max++;
-			tab[*i][0] = max;
-		}
-		(*j)++;
-		if (*j > t_data->size_a - 1)
-			*j = 0;
-		if (*j == *i)
-			break ;
-	}
+	incressing(t_data);
 }
 
 void	find_index_of_longest_sorted(t_push_data *t_data)
 {
-	int	i;
-	int	j;
-	int	**tab;
-
-	tab = malloc(sizeof(int *) * t_data->size_a - 1);
-	i = 0;
 	t_data->ils = 0;
-	while (i < t_data->size_a)
-	{
-		j = i;
-		tab[i] = malloc(sizeof(int));
-		if_in_mywhile(t_data, &j, &i, tab);
-		i++;
-	}
-	get_biggest_index(t_data, tab);
+	get_biggest_index(t_data);
 }

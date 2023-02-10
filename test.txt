@@ -1,3 +1,3 @@
 while [ TRUE ] ; do
-LIST="$(ruby -e "puts (1..10).to_a.shuffle" | tr '\n' ' ')" ; ./push_swap $LIST | wc -l >> test.txt
+LIST="$(ruby -e "puts (1..500).to_a.shuffle" | tr '\n' ' ')" ; ./push_swap $LIST | wc -l >> out.txt
 done

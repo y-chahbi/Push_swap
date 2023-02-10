@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:32:34 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/08 11:24:11 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/10 17:46:13 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	find_smal_dex(t_push_data *t_data)
 	temp = t_data->stack_a[0];
 	while (i < t_data->size_a)
 	{
-		if (temp < t_data->stack_a[i])
+		if (t_data->stack_a[i] < temp)
 		{
 			temp = t_data->stack_a[i];
 			index = i;
