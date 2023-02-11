@@ -6,18 +6,23 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:07:37 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/10 17:28:44 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 20:41:26 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	*mal___o(t_push_data *t_data)
+{
+	t_data->s_tab = malloc(sizeof(int) * t_data->s_size);
+	if (!t_data->s_tab)
+		return (NULL);
+	return (0);
+}
+
 void	inc___p1(t_push_data *t_data, int i, int j)
 {
-	t_data->a__stack = malloc(sizeof(int) * t_data->size_a);
-	t_data->incr = malloc(sizeof(int) * t_data->size_a);
-	t_data->save = malloc(sizeof(int) * t_data->size_a);
-	t_data->to_push = malloc(sizeof(int) * t_data->size_a);
+	p_ml(t_data);
 	ft_setnum(t_data->incr, 1, t_data->size_a);
 	ft_setnum(t_data->save, 0, t_data->size_a);
 	ft_setnum(t_data->to_push, 0, t_data->size_a);
@@ -99,6 +104,6 @@ void	incressing(t_push_data *t_data)
 	}
 	i = dex;
 	t_data->s_size = t_data->incr[dex];
-	t_data->s_tab = malloc(sizeof(int) * t_data->s_size);
+	mal___o(t_data);
 	inc___p3(t_data, i, j);
 }

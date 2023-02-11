@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:03:45 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/11 14:24:22 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 20:22:16 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,7 @@ int	check_errors(int ac, char **av, t_push_data *t_data)
 	while (p[t_data->size_a] != NULL)
 		t_data->size_a++;
 	j = -1;
-	t_data->stack_a = malloc(sizeof(int) * t_data->size_a);
-	t_data->stack_b = ft_calloc(sizeof(int), t_data->size_a);
+	stack_a_malloc(t_data);
 	while (p[++j] != NULL)
 		t_data->stack_a[j] = ft_atoi(p[j]);
 	if (is_double(t_data->stack_a, t_data->size_a) == 6)

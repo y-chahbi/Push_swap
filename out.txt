@@ -1,13 +1,13 @@
-Process:         checker_bonus [67512]
+Process:         checker_bonus [6892]
 Path:            /Volumes/VOLUME/*/checker_bonus
-Load Address:    0x10ba5d000
+Load Address:    0x10ffd4000
 Identifier:      checker_bonus
 Version:         ???
 Code Type:       X86-64
-Parent Process:  zsh [65544]
+Parent Process:  zsh [6507]
 
-Date/Time:       2023-02-11 14:30:23.403 +0100
-Launch Time:     2023-02-11 14:30:13.260 +0100
+Date/Time:       2023-02-11 19:45:02.116 +0100
+Launch Time:     2023-02-11 19:44:38.991 +0100
 OS Version:      Mac OS X 10.14.6 (18G8022)
 Report Version:  7
 Analysis Tool:   /Applications/Xcode.app/Contents/Developer/usr/bin/leaks
@@ -15,11 +15,11 @@ Analysis Tool Version:  Xcode 11.3.1 (11C505)
 ----
 
 leaks Report Version: 4.0
-Process 67512: 167 nodes malloced for 14 KB
-Process 67512: 3 leaks for 48 total leaked bytes.
+Process 6892: 168 nodes malloced for 14 KB
+Process 6892: 3 leaks for 48 total leaked bytes.
 
     3 (48 bytes) << TOTAL >>
-      1 (16 bytes) ROOT LEAK: 0x7f9dd6d00010 [16]  length: 4  "rrr"
-      1 (16 bytes) ROOT LEAK: 0x7f9dd6d00020 [16]  length: 4  "rrr"
-      1 (16 bytes) ROOT LEAK: 0x7f9dd6d00060 [16]  length: 4  "rrr"
+      1 (16 bytes) ROOT LEAK: 0x7fe99e500010 [16]  length: 4  "rrr"
+      1 (16 bytes) ROOT LEAK: 0x7fe99e500020 [16]  length: 4  "rrr"
+      1 (16 bytes) ROOT LEAK: 0x7fe99e500060 [16]  length: 3  "sa"
 

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 15:10:22 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/11 14:30:47 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 20:44:16 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	checker_u(t_push_data	*t_data)
 		if (line == NULL)
 			break ;
 		check(t_data, line);
+		free(line);
 	}
 	if (t_data->size_b == 0 && is_sorted_a(t_data) == 1)
 		ft_putstr("OK\n");

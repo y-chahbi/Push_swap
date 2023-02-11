@@ -6,11 +6,19 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:43:08 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/09 10:40:11 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 20:39:28 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	*long_way_malloc(t_push_data *t_data, t_indexing *t_dex)
+{
+	t_dex->long_way = malloc(sizeof(int) * (t_data->size_b));
+	if (!t_dex->long_way)
+		return (NULL);
+	return (0);
+}
 
 int	ccplace(t_push_data *t_data, int i, int j)
 {
@@ -51,7 +59,7 @@ void	while___(t_push_data *t_data, t_indexing *t_dex, int i, int j)
 
 void	long_way(t_push_data *t_data, t_indexing *t_dex, int i)
 {
-	t_dex->long_way = malloc(sizeof(int) * (t_data->size_b));
+	long_way_malloc(t_data, t_dex);
 	while (i <= t_data->size_b - 1)
 	{
 		if (t_dex->current_p[i] < 0 && t_dex->stack_b[i] > 0)
@@ -76,7 +84,7 @@ void	long_way(t_push_data *t_data, t_indexing *t_dex, int i)
 	}
 }
 
-void	cur__p(t_push_data *t_data, t_indexing *t_dex)
+void	*cur__p(t_push_data *t_data, t_indexing *t_dex)
 {
 	int	i;
 	int	j;
@@ -87,6 +95,8 @@ void	cur__p(t_push_data *t_data, t_indexing *t_dex)
 	max = get_max(t_data);
 	min = get_min(t_data);
 	t_dex->current_p = malloc(sizeof(int) * (t_data->size_b));
+	if (!t_dex->current_p)
+		return (NULL);
 	while (i <= t_data->size_b - 1)
 	{
 		j = 0;
@@ -100,4 +110,5 @@ void	cur__p(t_push_data *t_data, t_indexing *t_dex)
 	}
 	i = 0;
 	long_way(t_data, t_dex, i);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/11 14:27:03 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 20:43:46 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	big_sort(t_push_data *t_data);
 void	find_index_of_longest_sorted(t_push_data *t_data);
 void	the_big_player(t_push_data *t_data);
 int		is_sorted_a(t_push_data *t_data);
-void	find_best_move(t_push_data *t_data);
+void	*find_best_move(t_push_data *t_data);
 void	s_element_dex(t_push_data *t_data, t_indexing *t_dex);
 void	s_el_a_b(t_push_data *t_data, t_indexing *t_dex);
 int		get_max(t_push_data *t_data);
@@ -91,11 +91,13 @@ int		get_index(t_indexing *t_dex, t_push_data *t_data);
 void	do_some_magic(t_push_data *t_data, t_indexing *t_dex);
 int		find_smal_dex(t_push_data *t_data);
 void	last_sort(t_push_data *t_data);
-void	cur__p(t_push_data *t_data, t_indexing *t_dex);
+void	*cur__p(t_push_data *t_data, t_indexing *t_dex);
 void	checker_u(t_push_data	*t_data);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 void	incressing(t_push_data *t_data);
 void	ft_setnum(int *b, int c, size_t len);
 void	free_stacks(t_push_data *t_data);
 void	free_st(char **s);
+void	*p_ml(t_push_data *t_data);
+void	*stack_a_malloc(t_push_data *t_data);
 #endif

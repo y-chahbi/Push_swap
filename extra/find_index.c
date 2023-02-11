@@ -12,6 +12,34 @@
 
 #include "../push_swap.h"
 
+void	*stack_a_malloc(t_push_data *t_data)
+{
+	t_data->stack_a = malloc(sizeof(int) * t_data->size_a);
+	if (!t_data->stack_a)
+		return (NULL);
+	t_data->stack_b = ft_calloc(sizeof(int), t_data->size_a);
+	if (!t_data->stack_b)
+		return (NULL);
+	return (0);
+}
+
+void	*p_ml(t_push_data *t_data)
+{
+	t_data->a__stack = malloc(sizeof(int) * t_data->size_a);
+	if (!t_data->a__stack)
+		return (NULL);
+	t_data->incr = malloc(sizeof(int) * t_data->size_a);
+	if (!t_data->incr)
+		return (NULL);
+	t_data->save = malloc(sizeof(int) * t_data->size_a);
+	if (!t_data->save)
+		return (NULL);
+	t_data->to_push = malloc(sizeof(int) * t_data->size_a);
+	if (!t_data->to_push)
+		return (NULL);
+	return (0);
+}
+
 void	ft_setnum(int *b, int c, size_t len)
 {
 	size_t	dex;
