@@ -6,11 +6,24 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 17:18:50 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 12:53:00 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:24:38 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	free_st(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+}
 
 int	is_sorted_a(t_push_data *t_data)
 {

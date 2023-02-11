@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 02:02:58 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/01 08:44:59 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:22:05 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_puterror(void)
 {
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit(1);
 }
 

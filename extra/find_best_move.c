@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:47:22 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/07 12:58:58 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:17:21 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	find_best_move(t_push_data *t_data)
 
 	t_dex = malloc(sizeof(t_indexing));
 	s_element_dex(t_data, t_dex);
+	free(t_dex);
 }

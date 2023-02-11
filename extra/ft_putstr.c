@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:06:39 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/01 08:43:48 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:21:18 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putstr(char *s)
 	dex = 0;
 	while (s[dex] != '\0')
 	{
-		write(1, &s[dex], 1);
+		write(2, &s[dex], 1);
 		dex++;
 	}
 }

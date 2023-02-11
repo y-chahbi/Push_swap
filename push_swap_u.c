@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:47:56 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/10 20:59:47 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:16:37 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	push_swap_u(t_push_data *t_data)
 		sort_5(t_data);
 	if (t_data->size_a > 5)
 		big_sort(t_data);
-	system("leaks push_swap");
 }

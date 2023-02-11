@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:03:45 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/10 21:06:26 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:24:22 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,9 @@ void	while_func(char **s, int *j, int *i, char **av)
 	while (*j <= *i)
 	{
 		if (*j > 1)
+		{
 			*s = ft_strjoin(*s, " ");
+		}
 		*s = ft_strjoin(*s, av[*j]);
 		(*j)++;
 	}
@@ -76,7 +78,7 @@ int	check_errors(int ac, char **av, t_push_data *t_data)
 	char	*s;
 	char	**p;
 
-	s = "";
+	s = NULL;
 	j = 1;
 	i = ac - 1;
 	while_func (&s, &j, &i, av);
@@ -93,5 +95,5 @@ int	check_errors(int ac, char **av, t_push_data *t_data)
 		return (t_data->status = 0, 6);
 	if (is_sorted(t_data->stack_a, t_data->size_a) == 6)
 		return (t_data->status = 0);
-	return (free(s), free(p), 0);
+	return (free_st(p), free(s), 0);
 }

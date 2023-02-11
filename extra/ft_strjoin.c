@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 15:04:32 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/01/03 14:09:56 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:28:11 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (ft_strdup(s2));
 	if (!s2[0])
 	{
-		write (1, "Error\n", 6);
+		write (2, "Error\n", 6);
 		exit(1);
 	}
 	dex = 0;
@@ -38,5 +38,5 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (dexx < ft_strlen(s2))
 		ptr[dex++] = s2[dexx++];
 	ptr[dex] = '\0';
-	return (ptr);
+	return (free((void *)s1), ptr);
 }

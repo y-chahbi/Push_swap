@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/10 20:50:11 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/11 14:27:03 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ void	checker_u(t_push_data	*t_data);
 int		ft_strncmp(char *s1, char *s2, size_t n);
 void	incressing(t_push_data *t_data);
 void	ft_setnum(int *b, int c, size_t len);
-void	free_stacks(t_indexing *t_dex, t_push_data *t_data);
+void	free_stacks(t_push_data *t_data);
+void	free_st(char **s);
 #endif
