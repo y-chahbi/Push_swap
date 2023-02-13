@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:07:37 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/11 20:41:26 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/13 08:20:57 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	inc___p1(t_push_data *t_data, int i, int j)
 		t_data->a__stack[i] = t_data->stack_a[j];
 		i++;
 		j++;
-		if (j > t_data->size_a)
+		if (j >= t_data->size_a)
 			j = 0;
 		if (j == t_data->ils)
 			break ;

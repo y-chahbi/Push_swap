@@ -58,10 +58,10 @@ void	get_biggest_index(t_push_data *t_data)
 	int	count;
 	int	tmp;
 
-	size = t_data->size_a - 1;
+	size = t_data->size_a;
 	count = 0;
 	tmp = t_data->stack_a[0];
-	while (count <= size)
+	while (count < size)
 	{
 		if (t_data->stack_a[count] < tmp)
 		{
