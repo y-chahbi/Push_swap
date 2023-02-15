@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:49:12 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/13 10:12:41 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/15 08:55:24 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	free____(t_indexing *t_dex)
 
 void	current_p(t_push_data *t_data, t_indexing *t_dex)
 {
+	free(t_dex->current_p);
 	cur__p(t_data, t_dex);
 }
 
@@ -32,8 +33,6 @@ void	s_element_dex(t_push_data *t_data, t_indexing *t_dex)
 		s_el_a_b(t_data, t_dex);
 		current_p(t_data, t_dex);
 		do_some_magic(t_data, t_dex);
-		s_el_a_b(t_data, t_dex);
-		current_p(t_data, t_dex);
 	}
 	free____(t_dex);
 	last_sort(t_data);

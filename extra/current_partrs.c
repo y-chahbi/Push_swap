@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:43:08 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/11 20:39:28 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/15 08:53:33 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	*long_way_malloc(t_push_data *t_data, t_indexing *t_dex)
 {
+	free(t_dex->long_way);
 	t_dex->long_way = malloc(sizeof(int) * (t_data->size_b));
 	if (!t_dex->long_way)
 		return (NULL);

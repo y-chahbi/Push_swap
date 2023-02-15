@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 11:55:25 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/12 15:14:24 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/15 08:44:46 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	*s_el_b(t_push_data *t_data, t_indexing *t_dex)
 
 	i = 0;
 	half = (t_data->size_b) / 2;
+	free(t_dex->stack_b);
 	t_dex->stack_b = malloc(sizeof(int) * (t_data->size_b));
 	if (!t_dex->stack_b)
 		return (NULL);
@@ -40,6 +41,7 @@ void	*s_el_a(t_push_data *t_data, t_indexing *t_dex)
 
 	i = 0;
 	half = (t_data->size_a) / 2;
+	free(t_dex->stack_a);
 	t_dex->stack_a = malloc(sizeof(int) * (t_data->size_a));
 	if (!t_dex->stack_a)
 		return (NULL);
