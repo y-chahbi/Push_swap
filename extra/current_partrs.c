@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:43:08 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/15 08:53:33 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/19 18:20:14 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*long_way_malloc(t_push_data *t_data, t_indexing *t_dex)
 
 int	ccplace(t_push_data *t_data, int i, int j)
 {
-	while (j <= t_data->size_a - 1)
+	while (j <= t_data->size_a - 2)
 	{
 		if (t_data->stack_a[j] < t_data->stack_b[i]
 			&& t_data->stack_a[j + 1] > t_data->stack_b[i])

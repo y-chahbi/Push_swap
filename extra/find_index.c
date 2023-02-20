@@ -45,7 +45,7 @@ void	ft_setnum(int *b, int c, size_t len)
 	size_t	dex;
 
 	dex = 0;
-	while (dex <= len)
+	while (dex < len)
 	{
 		b[dex] = c;
 		dex++;

@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 09:43:47 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/14 18:10:53 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/19 18:18:24 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ void	push_bb(t_push_data *t_data)
 	int	i;
 
 	i = t_data->size_b;
-	if (t_data->size_a >= 1)
+	if (t_data->size_a >= 0)
 	{
-		while (i >= 0)
+		while (i > 0)
 		{
 			t_data->stack_b[i] = t_data->stack_b[i - 1];
 			i--;
