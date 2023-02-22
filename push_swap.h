@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 20:37:31 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/11 20:43:46 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/20 12:01:15 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_data{
 	int		*stack_b;
 	int		size_a;
 	int		size_b;
-	int		status;
 	int		ils;
 	int		s_size;
 	int		*s_tab;
@@ -38,6 +37,7 @@ typedef struct s_data{
 	int		*a__stack;
 	int		*save;
 	int		*to_push;
+	int		much_pushes;
 }	t_push_data;
 
 void	ft_putchar(char c);

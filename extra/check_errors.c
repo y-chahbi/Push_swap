@@ -6,7 +6,7 @@
 /*   By: ychahbi <ychahbi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 01:03:45 by ychahbi           #+#    #+#             */
-/*   Updated: 2023/02/11 20:22:16 by ychahbi          ###   ########.fr       */
+/*   Updated: 2023/02/20 14:26:41 by ychahbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	is_double(int *tab, int size)
 		while (j < size)
 		{
 			if (tab[j] == tab[i] && i != j)
-				return (6);
+			{
+				write(2, "Error\n", 6);
+				exit(EXIT_FAILURE);
+			}
 			j++;
 		}
 		i++;
@@ -47,7 +50,7 @@ int	is_sorted(int *tab, int size)
 			k++;
 	}
 	if (k == j - 1)
-		exit(1);
+		exit(EXIT_FAILURE);
 	return (0);
 }
 
@@ -68,7 +71,6 @@ void	init_func(t_push_data *t_data)
 {
 	t_data->size_a = 0;
 	t_data->size_b = 0;
-	t_data->status = 1;
 }
 
 int	check_errors(int ac, char **av, t_push_data *t_data)
@@ -90,9 +92,7 @@ int	check_errors(int ac, char **av, t_push_data *t_data)
 	stack_a_malloc(t_data);
 	while (p[++j] != NULL)
 		t_data->stack_a[j] = ft_atoi(p[j]);
-	if (is_double(t_data->stack_a, t_data->size_a) == 6)
-		return (t_data->status = 0, 6);
-	if (is_sorted(t_data->stack_a, t_data->size_a) == 6)
-		return (t_data->status = 0);
+	is_double(t_data->stack_a, t_data->size_a);
+	is_sorted(t_data->stack_a, t_data->size_a);
 	return (free_st(p), free(s), 0);
 }
